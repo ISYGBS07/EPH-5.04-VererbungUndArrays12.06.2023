@@ -43,6 +43,8 @@ public class Schulleiter {
         this.alter = alter;
     }
 
+
+
     public String getBesoldungsGruppe() {
         return besoldungsGruppe;
     }

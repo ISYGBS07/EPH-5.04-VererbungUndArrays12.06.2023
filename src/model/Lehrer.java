@@ -3,16 +3,11 @@ package model;
 /**
  * Created by Jean-Pierre on 10.05.2017.
  */
-public class Lehrer {
+public class Lehrer extends Mensch{
 
     //Attribute
-    private String name;
-    private int alter;
     private String besoldungsGruppe;
 
-    //Referenzen
-    private Kurs[] kurseDesLehrers;
-    private Unterrichtsfach[] faecherDesLehrers;
 
     /**
      * Ein Objekt der Klasse Lehrer wird erstellt.
@@ -21,26 +16,10 @@ public class Lehrer {
      * @param besoldungsGruppe    Gehaltsstufen von Lehrern
      */
     public Lehrer(String name, int alter, String besoldungsGruppe) {
-        this.name = name;
-        this.alter = alter;
+        super(name,alter);
         this.besoldungsGruppe = besoldungsGruppe;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAlter() {
-        return alter;
-    }
-
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
 
     public String getBesoldungsGruppe() {
         return besoldungsGruppe;
@@ -58,7 +37,8 @@ public class Lehrer {
      * @param neuerKurs
      */
     public void addKurs(Kurs neuerKurs){
-        //TODO Hinzufügen eines Kurses, den ein Lehrer unterrichten muss.
+        super.addKurs(neuerKurs);
+        neuerKurs.setLehrkraft(this);
     }
 
     /**
@@ -69,6 +49,7 @@ public class Lehrer {
      */
     public void addFach(Unterrichtsfach neuesFach){
         //TODO Hinzufügen eines Faches, das ein Lehrer unterrichten kann.
+        super.addFach(neuesFach);
     }
 
     /**
@@ -81,4 +62,5 @@ public class Lehrer {
         //TODO Kompakte Zeichenkette zu den Informationen einer Lehrkraft - gut lesbar!
         return info;
     }
+
 }
