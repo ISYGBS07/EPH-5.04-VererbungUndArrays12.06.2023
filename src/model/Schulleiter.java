@@ -3,7 +3,7 @@ package model;
 /**
  * Created by Jean-Pierre on 10.05.2017.
  */
-public class Schulleiter {
+public class Schulleiter extends Lehrer{
 
     //Attribute
     private String name;
@@ -22,9 +22,7 @@ public class Schulleiter {
      * @param besoldungsGruppe
      */
     public Schulleiter(String name, int alter, String besoldungsGruppe) {
-        this.name = name;
-        this.alter = alter;
-        this.besoldungsGruppe = besoldungsGruppe;
+        super(name,alter,besoldungsGruppe);
     }
 
     public String getName() {
@@ -60,7 +58,7 @@ public class Schulleiter {
      * @param neuerKurs
      */
     public void addKurs(Kurs neuerKurs){
-        //TODO Hinzufügen eines Kurses, den ein Schulleiter unterrichten muss.
+        super.addKurs(neuerKurs);
     }
 
     /**
@@ -70,7 +68,7 @@ public class Schulleiter {
      * @param neuesFach
      */
     public void addFach(Unterrichtsfach neuesFach){
-        //TODO Hinzufügen eines Faches, das ein Schulleiter unterrichten kann.
+        super.addFach(neuesFach);
     }
 
     /**
@@ -88,8 +86,6 @@ public class Schulleiter {
      * @return
      */
     public String getInfo(){
-        String info = "";
-        //TODO Kompakte Zeichenkette zu den Informationen eines Schulleiters - gut lesbar!
-        return info;
+        return super.getInfo();
     }
 }

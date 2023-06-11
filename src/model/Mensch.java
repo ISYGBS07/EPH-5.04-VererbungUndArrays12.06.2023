@@ -40,6 +40,14 @@ public class Mensch {
         this.kurse = kurse;
     }
 
+    public Unterrichtsfach[] getFaecher() {
+        return faecher;
+    }
+
+    public void setFaecher(Unterrichtsfach[] faecher) {
+        this.faecher = faecher;
+    }
+
     public void addKurs(Kurs neuerKurs){
 
         if(kurse == null) {
@@ -60,17 +68,17 @@ public class Mensch {
         }
     }
 
-    public void addFach(Unterrichtsfach neuesFach){
+    public void addFach(Unterrichtsfach neuesFach) {
         //TODO Hinzufügen eines Faches, das ein Lehrer unterrichten kann.
 
-        if(faecher == null) {
+        if (faecher == null) {
             faecher = new Unterrichtsfach[1];
             faecher[0] = neuesFach;
-        }else{
+        } else {
 
-            Unterrichtsfach[] hilfsArray = new Unterrichtsfach[faecher.length+1];
+            Unterrichtsfach[] hilfsArray = new Unterrichtsfach[faecher.length + 1];
 
-            for(int i = 0; i < faecher.length; i++){
+            for (int i = 0; i < faecher.length; i++) {
                 hilfsArray[i] = faecher[i];
             }
 
@@ -80,11 +88,4 @@ public class Mensch {
 
         }
     }
-
-    public String getInfo(){
-        String info = getName() + getAlter();
-        //TODO Kompakte Zeichenkette zu den Informationen einer Lehrkraft - gut lesbar!
-        return info;
-    }
-
 }
