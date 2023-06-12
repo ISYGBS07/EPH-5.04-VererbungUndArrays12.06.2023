@@ -60,3 +60,4 @@ public class Kurs {
         return info;
     }
 }
+dgfdfdfgdf
